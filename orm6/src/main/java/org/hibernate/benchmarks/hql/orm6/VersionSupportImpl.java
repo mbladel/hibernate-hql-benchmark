@@ -11,6 +11,7 @@ import org.hibernate.benchmarks.hql.PersistenceContext;
 import org.hibernate.benchmarks.hql.VersionSupport;
 import org.hibernate.benchmarks.hql.model.Component;
 import org.hibernate.benchmarks.hql.model.CompositionEntity;
+import org.hibernate.benchmarks.hql.model.EntityOfBasics;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -29,7 +30,7 @@ public class VersionSupportImpl implements VersionSupport {
 		final MetadataSources metadataSources = new MetadataSources( serviceRegistry );
 		sessionFactory = (SessionFactoryImplementor) metadataSources
 				.addResource( "benchmark.hbm.xml" )
-				.addAnnotatedClasses( CompositionEntity.class, Component.class )
+				.addAnnotatedClasses( EntityOfBasics.class )
 				.buildMetadata()
 				.buildSessionFactory();
 	}

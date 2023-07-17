@@ -1,7 +1,7 @@
 import static java.util.Collections.emptyList
 
 apply from: rootProject.file( 'gradle/java-module.gradle' )
-apply plugin: 'me.champeau.gradle.jmh'
+apply plugin: 'me.champeau.jmh'
 
 dependencies {
 	implementation project( ':common' )
@@ -44,9 +44,9 @@ tasks.processJmhResources.duplicatesStrategy = DuplicatesStrategy.WARN
 jmh {
 	benchmarkMode = ['avgt']
 
-	iterations = 20 //default 10
+	iterations = 10 //default 10
 	fork = 2 //default 10
-	warmupIterations = 20 // Number of warmup iterations to do.
+	warmupIterations = 10 // Number of warmup iterations to do.
 
 	humanOutputFile = jmhReportHumanFile
 
